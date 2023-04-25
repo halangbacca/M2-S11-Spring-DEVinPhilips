@@ -28,4 +28,9 @@ public class QuizController {
         service.cadastra(quiz);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleta(@PathVariable Long id) {
+        service.deleta(id);
+    }
+
 }

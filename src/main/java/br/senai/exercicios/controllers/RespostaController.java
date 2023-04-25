@@ -28,4 +28,9 @@ public class RespostaController {
         service.cadastra(resposta);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleta(@PathVariable Long id) {
+        service.deleta(id);
+    }
+
 }

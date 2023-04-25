@@ -24,4 +24,8 @@ public class QuizService {
         return repository.findAll();
     }
 
+    public void deleta(Long id) {
+        repository.deleteById(id);
+    }
+
 }

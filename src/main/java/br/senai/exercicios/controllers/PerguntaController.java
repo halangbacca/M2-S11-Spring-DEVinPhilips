@@ -28,4 +28,9 @@ public class PerguntaController {
         service.cadastra(pergunta);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleta(@PathVariable Long id) {
+        service.deleta(id);
+    }
+
 }
