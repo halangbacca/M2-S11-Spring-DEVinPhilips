@@ -2,6 +2,7 @@ package br.senai.exercicios.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,13 +11,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "quizzes")
-public class Quiz {
+@Table(name = "perguntas")
+public class Pergunta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    private String nome;
+    private String titulo;
     @NotBlank
-    private String descricao;
+    private String texto;
+    @NotNull
+    private Long id_quiz;
 }
