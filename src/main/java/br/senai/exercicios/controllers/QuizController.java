@@ -28,6 +28,11 @@ public class QuizController {
         service.cadastra(quiz);
     }
 
+    @PutMapping("/{id}")
+    public void atualiza(@PathVariable Long id, @RequestBody Quiz quiz) {
+        service.atualiza(quiz, id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleta(@PathVariable Long id) {
         service.deleta(id);

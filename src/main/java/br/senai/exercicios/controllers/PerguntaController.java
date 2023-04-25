@@ -28,6 +28,11 @@ public class PerguntaController {
         service.cadastra(pergunta);
     }
 
+    @PutMapping("/{id}")
+    public void atualiza(@PathVariable Long id, @RequestBody Pergunta pergunta) {
+        service.atualiza(pergunta, id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleta(@PathVariable Long id) {
         service.deleta(id);

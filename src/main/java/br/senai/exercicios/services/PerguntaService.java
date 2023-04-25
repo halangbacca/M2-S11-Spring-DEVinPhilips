@@ -2,6 +2,7 @@ package br.senai.exercicios.services;
 
 import br.senai.exercicios.models.Pergunta;
 import br.senai.exercicios.repositories.PerguntaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,15 @@ public class PerguntaService {
 
     public List<Pergunta> lista() {
         return repository.findAll();
+    }
+
+    public Pergunta atualiza(Pergunta perguntaAtualizada, Long id) {
+        Pergunta pergunta = repository.findById(id).orElseThrow(EntityNotFoundException::new);
+        pergunta.setTitulo(perguntaAtualizada.getTitulo());
+        pergunta.setTexto(perguntaAtualizada.getTexto());
+        pergunta.setId_quiz(perguntaAtualizada.getId_quiz());
+
+        return repository.save(pergunta);
     }
 
     public void deleta(Long id) {

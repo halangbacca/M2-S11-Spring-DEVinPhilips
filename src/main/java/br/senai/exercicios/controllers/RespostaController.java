@@ -28,6 +28,11 @@ public class RespostaController {
         service.cadastra(resposta);
     }
 
+    @PutMapping("/{id}")
+    public void atualiza(@PathVariable Long id, @RequestBody Resposta resposta) {
+        service.atualiza(resposta, id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleta(@PathVariable Long id) {
         service.deleta(id);
