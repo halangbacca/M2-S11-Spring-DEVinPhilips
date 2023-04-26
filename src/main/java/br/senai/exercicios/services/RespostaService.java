@@ -1,6 +1,5 @@
 package br.senai.exercicios.services;
 
-import br.senai.exercicios.models.Quiz;
 import br.senai.exercicios.models.Resposta;
 import br.senai.exercicios.repositories.RespostaRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -26,10 +25,14 @@ public class RespostaService {
         return repository.findAll();
     }
 
+    public List<Resposta> listaByPergunta(Long id) {
+        return repository.getRespostasByIdPergunta(id);
+    }
+
     public Resposta atualiza(Resposta respostaAtualizada, Long id) {
         Resposta resposta = repository.findById(id).orElseThrow(EntityNotFoundException::new);
         resposta.setTexto(respostaAtualizada.getTexto());
-        resposta.setId_pergunta(respostaAtualizada.getId_pergunta());
+        resposta.setIdPergunta(respostaAtualizada.getIdPergunta());
 
         return repository.save(resposta);
     }

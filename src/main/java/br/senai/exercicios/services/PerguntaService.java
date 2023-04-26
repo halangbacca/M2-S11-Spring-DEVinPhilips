@@ -25,11 +25,15 @@ public class PerguntaService {
         return repository.findAll();
     }
 
+    public List<Pergunta> listaByQuiz(Long id) {
+        return repository.getPerguntasByIdQuiz(id);
+    }
+
     public Pergunta atualiza(Pergunta perguntaAtualizada, Long id) {
         Pergunta pergunta = repository.findById(id).orElseThrow(EntityNotFoundException::new);
         pergunta.setTitulo(perguntaAtualizada.getTitulo());
         pergunta.setTexto(perguntaAtualizada.getTexto());
-        pergunta.setId_quiz(perguntaAtualizada.getId_quiz());
+        pergunta.setIdQuiz(perguntaAtualizada.getIdQuiz());
 
         return repository.save(pergunta);
     }

@@ -23,6 +23,11 @@ public class RespostaController {
         return service.lista();
     }
 
+    @GetMapping("/pergunta")
+    public List<Resposta> listaByPergunta(@RequestParam Long id){
+        return service.listaByPergunta(id);
+    }
+
     @PostMapping
     public void cadastra(@RequestBody Resposta resposta) {
         service.cadastra(resposta);

@@ -19,5 +19,6 @@ public class Resposta {
     @NotBlank
     private String texto;
     @NotNull
-    private Long id_pergunta;
+    @Column(name = "id_pergunta")
+    private Long idPergunta;
 }

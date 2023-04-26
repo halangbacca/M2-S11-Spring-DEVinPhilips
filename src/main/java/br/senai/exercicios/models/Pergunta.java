@@ -21,5 +21,6 @@ public class Pergunta {
     @NotBlank
     private String texto;
     @NotNull
-    private Long id_quiz;
+    @Column(name = "id_quiz")
+    private Long idQuiz;
 }

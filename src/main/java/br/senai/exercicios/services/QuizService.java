@@ -1,6 +1,5 @@
 package br.senai.exercicios.services;
 
-import br.senai.exercicios.models.Pergunta;
 import br.senai.exercicios.models.Quiz;
 import br.senai.exercicios.repositories.QuizRepository;
 import jakarta.persistence.EntityNotFoundException;
